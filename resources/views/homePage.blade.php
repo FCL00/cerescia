@@ -85,7 +85,7 @@
 
 
    {{-- product section --}}
-   <section id="category-section" class="mb-32 bg-rose-200">
+   <section id="category-section" class="mb-32  bg-rose-200">
     {{-- title section --}}
    <div class="container mx-auto px-4 space-y-1 pt-10">
         <h1 class="text-3xl md:text-4xl lg:text-6xl xl:text-7xl text-center font-bold  md:text-left text-rose-500 w-full">
@@ -166,7 +166,7 @@
     </div>
 </section> --}}
 
-   <section id="customer-review" class="mb-32 py-16">
+   <section id="reviews" class="mb-32 py-16 md:py-32">
         <div class="container mx-auto p-4 mb-5">
             <h1 class="text-3xl md:text-4xl lg:text-6xl xl:text-7xl text-center font-bold md:text-left text-rose-500 w-full">
                 Our Customer Reviews
@@ -302,22 +302,5 @@
         </div>
     </section>
 
-   {{-- footer --}}
-   <footer class="bg-rose-800 text-white py-4">
-    <div class="container mx-auto flex flex-col items-center">
-        <div class="flex items-center mb-4">
-            <img class="w-8 h-8 mr-2" src="" alt="Your Logo">
-            <span class="text-xl font-bold">Cerescia</span>
-        </div>
-        <div class="flex space-x-4">
-            <a href="#" class="hover:text-gray-300">Home</a>
-            <a href="#" class="hover:text-gray-300">Products</a>
-            <a href="#" class="hover:text-gray-300">About Us</a>
-            <a href="#" class="hover:text-gray-300">Contact</a>
-        </div>
-        <div class="mt-4">
-            <p>&copy; 2023 Your Company. All rights reserved.</p>
-        </div>
-    </div>
-</footer>
+   
 </x-layout>

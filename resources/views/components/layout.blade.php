@@ -18,7 +18,7 @@
         <!-- Flex container -->
         <div class="container flex items-center justify-between mx-auto p-4">
             <!-- Logo -->
-            <a class="text-white text-bold hover:text-rose-400 text-2xl font-bold" href="#">Cerecia</a>
+            <a class="text-white text-bold hover:text-rose-400 text-2xl font-bold" href="#">Cerescia</a>
             <!-- Hamburger Menu (Mobile) -->
             <div class="md:hidden">
                 <button id="mobile-menu-button" class="text-white focus:outline-none">
@@ -32,13 +32,14 @@
             <div class="hidden md:block space-x-1">
                 <a class="text-white hover:text-rose-400" href="#hero">Home</a>
                 <a class="text-white hover:text-rose-400" href="#product-section">Products</a>
+                <a class="text-white hover:text-rose-400" href="#reviews">Reviews</a>
                 <a class="text-white hover:text-rose-400" href="#contact">Contact</a>
                 <a class="text-white hover:text-rose-400" href="#">About</a>
             </div>
     
             <!-- Login Button -->
             <div class="hidden md:block">
-                <button class="text-white bg-rose-700 p-2 rounded-md hover:bg-rose-600">Login</button>
+                <a href="/login" class="text-white bg-rose-700 p-2 rounded-md hover:bg-rose-600">Login</a>
             </div>
         </div>
     </nav>
@@ -57,35 +58,34 @@
             <a class="text-white hover:text-rose-400" href="#">Products</a>
             <a class="text-white hover:text-rose-400" href="#">Contact</a>
             <a class="text-white hover:text-rose-400" href="#">About</a>
-            <a class="text-white hover:text-rose-400" href="#">Login</a>
+            <a class="text-white hover:text-rose-400" href="/login">Login</a>
         </div>
     </div>
     
     {{ $slot }}
 
+    {{-- footer --}}
+   <footer class="bg-rose-500 text-white py-4">
+        <div class="container mx-auto flex flex-col items-center">
+            <div class="flex items-center mb-4">
+                <img class="w-8 h-8 mr-2" src="" alt="Your Logo">
+                <span class="text-xl font-bold">Cerescia</span>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-gray-300">Home</a>
+                <a href="#" class="hover:text-gray-300">Products</a>
+                <a href="#" class="hover:text-gray-300">About Us</a>
+                <a href="#" class="hover:text-gray-300">Contact</a>
+            </div>
+            <div class="mt-4">
+                <p>&copy; 2023 Your Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
     <!-- JavaScript for Mobile Menu Toggle -->
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
-        const mobileMenu = document.getElementById('mobile-menu');
+    <script src="/js/menu.js">
 
-        mobileMenuButton.addEventListener('click', function () {
-            mobileMenu.classList.toggle('invisible');
-            mobileMenu.classList.toggle('opacity-100');
-        });
-
-        closeMobileMenuButton.addEventListener('click', function () {
-            mobileMenu.classList.add('invisible');
-            mobileMenu.classList.remove('opacity-100');
-        });
-
-        // Adjust navbar background on scroll for sticky effect
-        window.addEventListener('scroll', function () {
-            const navbar = document.querySelector('.fixed');
-            navbar.classList.toggle('bg-rose-100', window.scrollY > 0);
-        });
-    });
 </script>
 </body>
 </html>
