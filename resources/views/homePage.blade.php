@@ -90,8 +90,8 @@
             </h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis est, commodi odio velit fuga ipsam cum accusamus laboriosam.</p>
         </div>
-        <div class="container mx-auto px-4">
-            
+        <div class="container mx-auto px-4 flex flex-col-reverse md:flex-row">
+            {{-- 2 columns --}}
         </div>
    </section>
 

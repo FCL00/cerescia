@@ -9,6 +9,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@100;300;400;500;700&family=Signika:wght@300;700&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/874ad22535.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
         @vite('resources/css/app.css')
     </head>
     <body class="font-[Poppins]">
