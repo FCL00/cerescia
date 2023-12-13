@@ -13,9 +13,10 @@ document.addEventListener("DOMContentLoaded", function () {
         mobileMenu.classList.remove("opacity-100");
     });
 
-    // Adjust navbar background on scroll for sticky effect
-    window.addEventListener("scroll", function () {
-        const navbar = document.querySelector(".fixed");
-        navbar.classList.toggle("bg-rose-100", window.scrollY > 0);
-    });
+    // // Adjust navbar background on scroll for sticky effect
+    // window.addEventListener("scroll", function () {
+    //     const navbar = document.querySelector(".fixed");
+    //     navbar.classList.toggle("bg-rose-100", window.scrollY > 0);
+    //     navbar.classList.toggle("bg-rose-500", window.scrollY === 0);
+    // });
 });
