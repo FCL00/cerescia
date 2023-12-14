@@ -1,8 +1,7 @@
 <x-layout>
    <section id="login-form" class="">
-    
         <!-- Login Form -->
-        <div class="h-screen mx-auto flex items-center justify-centerbg-rose-200">
+        <div class="h-screen mx-auto flex items-center justify-center bg-rose-200">
             <div class="bg-white p-8 rounded-lg shadow-md w-full md:w-96">
                 <div class="mb-4">
                     <h2 class="text-3xl font-bold text-left text-rose-500">Login</h2>
@@ -36,7 +35,6 @@
                     <p class="mb-2">Don't have an account? <a href="/signUp" class="text-rose-500">Signup</a></p>
                     {{-- <a href="#" class="text-rose-500">Forgot password?</a> --}}
                 </div>
-            
             </div>
         </div>
    </section>
