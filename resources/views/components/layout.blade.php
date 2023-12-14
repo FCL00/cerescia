@@ -18,7 +18,7 @@
         <!-- Flex container -->
         <div class="container flex items-center justify-between mx-auto p-4">
             <!-- Logo -->
-            <a class="text-white text-bold hover:text-rose-400 text-2xl font-bold" href="#">Cerescia</a>
+            <a class="text-white text-bold hover:text-rose-400 text-2xl font-bold" href="/">Cerescia</a>
             <!-- Hamburger Menu (Mobile) -->
             <div class="md:hidden">
                 <button id="mobile-menu-button" class="text-white focus:outline-none">
@@ -30,17 +30,35 @@
     
             <!-- Navbar Links (Desktop) -->
             <div class="hidden md:block space-x-1">
-                <a class="text-white hover:text-rose-400" href="#hero">Home</a>
-                <a class="text-white hover:text-rose-400" href="#product-section">Products</a>
-                <a class="text-white hover:text-rose-400" href="#reviews">Reviews</a>
-                <a class="text-white hover:text-rose-400" href="#contact">Contact</a>
-                <a class="text-white hover:text-rose-400" href="#">About</a>
+                @auth
+                    <a class="text-white hover:text-rose-400" href="/">Home</a>
+                    <a class="text-white hover:text-rose-400" href="/store">Store</a>
+                    <a class="text-white hover:text-rose-400" href="#">Cart</a> 
+                    <a class="text-white hover:text-rose-400" href="#">Profile</a>
+                @else
+                    <a class="text-white hover:text-rose-400" href="#hero">Home</a>
+                    <a class="text-white hover:text-rose-400" href="#product-section">Products</a>
+                    <a class="text-white hover:text-rose-400" href="#reviews">Reviews</a>
+                    <a class="text-white hover:text-rose-400" href="#contact">Contact</a>
+                    <a class="text-white hover:text-rose-400" href="#">About</a>
+                @endauth
+              
+
+
             </div>
     
             <!-- Login Button -->
-            <div class="hidden md:block">
-                <a href="/login" class="text-white bg-rose-700 p-2 rounded-md hover:bg-rose-600">Login</a>
-            </div>
+            @auth
+                <form class="hidden md:block" action="/logout" method="POST">
+                    @csrf
+                    <button type="submit" class="text-white bg-rose-700 p-2 rounded-md hover:bg-rose-600">Sign Out</button>
+                </form>
+            @else
+                <div class="hidden md:block">
+                    <a href="/login" class="text-white bg-rose-700 p-2 rounded-md hover:bg-rose-600">Login</a>
+                </div>
+            @endauth
+            
         </div>
     </nav>
     
@@ -61,6 +79,28 @@
             <a class="text-white hover:text-rose-400" href="/login">Login</a>
         </div>
     </div>
+
+
+    {{-- alert messages --}}
+    @if(session('success') || session('failure'))
+        <div id="flash-message" class="absolute top-0 left-0 w-full pt-8">
+            <div class="container mx-auto px-6 pt-16">
+                @if(session('success'))
+                    <div class="bg-green-100 border-l-4 border-green-500 text-green-700" role="alert">
+                        <p class="font-bold">Success!</p>
+                        <p>{{ session('success') }}</p>
+                    </div>
+                @endif
+
+                @if(session('failure'))
+                    <div class="bg-red-100 border-l-4 border-red-500 text-red-700" role="alert">
+                        <p class="font-bold">Failed!</p>
+                        <p>{{ session('failure') }}</p>
+                    </div>
+                @endif
+            </div>
+        </div>
+    @endif
     
     {{ $slot }}
 
