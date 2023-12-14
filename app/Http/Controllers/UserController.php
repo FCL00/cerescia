@@ -35,7 +35,7 @@ class UserController extends Controller
         return view("storePage");
     }
     public function showSignUp(){
-        dd('here');
+        // dd('here');
         return view("signUpPage");
     }
     public function showLoginPage(){
