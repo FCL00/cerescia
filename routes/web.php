@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\StoreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [UserController::class, "showHomePage"]);
 Route::get('/login', [UserController::class, "showLoginPage"]);
+Route::get('/signUp', [UserController::class, "showSignUp"]);
+Route::post('/login', [UserController::class , "login"]);
+Route::post('/signUp', [UserController::class, "signUp"]);
+Route::post('/logout', [UserController::class, "logout"]);
+
+
+// store routes
+Route::get("/store", [StoreController::class, "showStore"]);
